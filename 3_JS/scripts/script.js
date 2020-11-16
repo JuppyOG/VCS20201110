@@ -36,3 +36,20 @@ button1.addEventListener("click", function() {
     outro.style.color = "red";
     }
 });
+
+
+var button2 = document.querySelector("#change-img");
+var i = 0;
+button2.addEventListener("click", function(){
+    var image = document.querySelector("div.gallery img");
+    image.setAttribute("src", "http://picsum.photos/seed/" + i++ + "/150");
+});
+
+
+var images = document.querySelectorAll("div.gallery img");
+
+for (var j = 0; j < images.length; j++ ) {
+    images[j].addEventListener("click", function(event){
+        event.target.setAttribute("src", "http://picsum.photos/seed/" + i++ + "/150");
+    });
+}
